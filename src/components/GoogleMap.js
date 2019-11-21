@@ -102,7 +102,7 @@ const mapStateToProps = (state) => ({
 });
 
 export default compose(
-  GoogleApiWrapper({apiKey: "AIzaSyD4bbUTo-fF9_Ht5pztE3dJHBpyVYmJeSg"}),
+  GoogleApiWrapper({apiKey: process.env.REACT_APP_GOOGLE_API_KEY}),
   geolocated({  userDecisionTimeout: 5000 }),
   connect(mapStateToProps)
 )(GoogleMap);
